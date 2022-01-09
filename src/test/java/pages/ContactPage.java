@@ -97,8 +97,8 @@ public class ContactPage {
     }
 
     public void errorsNotDisplayedOnContactPage() throws Exception{
-       // waitUntilFeedbackPopUpClosed();
-        //Thread.sleep(5000);
+        waitUntilFeedbackPopUpClosed();
+        Thread.sleep(5000);
         if(feedbackSuccessMsg.isDisplayed())
             Assert.assertTrue(feedbackSuccessMsg.isDisplayed());
     }
