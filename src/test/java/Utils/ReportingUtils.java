@@ -46,8 +46,10 @@ public class ReportingUtils {
         configuration.setQualifier("cucumber-report-1","First report");
         configuration.setQualifier("cucumber-report-2","Second report");
 
+
         ReportBuilder reportBuilder=new ReportBuilder(jsonFiles,configuration);
         Reportable result=reportBuilder.generateReports();
+
 
     }
 

@@ -44,10 +44,5 @@ public class MyRunner extends AbstractTestNGCucumberTests {
         ReportingUtils.generateReport();
         }
 
-//    @AfterClass
-//    public void TearDown(){
-//        driver.close();
-//    }
-
 
 }

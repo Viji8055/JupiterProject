@@ -7,10 +7,12 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import pages.ContactPage;
@@ -18,6 +20,7 @@ import pages.Homepage;
 import io.cucumber.java.en.Given;
 import pages.Shoppage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class JupiterSteps {
@@ -39,12 +42,15 @@ public class JupiterSteps {
         driver.manage().window().maximize();
     }
 
+
     @After
     public void closeBrowser(Scenario scenario) throws Exception{
         if(scenario.isFailed()) {
+            System.out.println(scenario.getName() + " is failed");
             scenario.log("step failed");
             scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png", "failed step");
-        }else{
+            utils.getScreenShot(driver);
+            }else{
             scenario.log("Scenario is passed");
         }
         driver.quit();
