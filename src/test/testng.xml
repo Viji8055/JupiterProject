@@ -3,8 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/vijkiran/IdeaProjects/PlanitTesting">
         <classes>
-            <class name="cukes.MyRunner"/>
-            
+            <class name="cukes.MyRunner"/>            
         </classes>
     </test>
 </suite>
